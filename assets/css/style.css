@@ -1,0 +1,34 @@
+
+/* https://lenadesign.org/2021/03/05/pure-css-rainbow-text-animation/ */
+.rainbowText {
+    background-image: 
+      linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+    animation: move 90s linear infinite;
+  }
+  
+  @keyframes move {
+    to {
+      background-position: 4500vh;
+    }
+  }
+
+  #position {
+    opacity: 0;
+  }
+  
+  #position.fade-in {
+    opacity: 1;
+    animation: fadeIn 2s forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
