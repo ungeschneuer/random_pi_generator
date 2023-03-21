@@ -1,1 +1,31 @@
-.rainbowText{background-image:linear-gradient(to right,red,orange,#ff0,green,#00f,indigo,violet);-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:move 90s linear infinite}@keyframes move{to{background-position:4500vh}}#position{opacity:0}@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.rainbowText {
+    background-image: linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: move 90s linear infinite
+}
+
+@keyframes move {
+    to {
+        background-position: 4500vh
+    }
+}
+
+#position {
+    opacity: 0
+}
+
+#position.fade-in {
+    opacity: 1;
+    animation: fadeIn 2s forwards
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
