@@ -1,5 +1,5 @@
 function getRandomPiDigit() {
-  const position = 1000000;
+  const position = Math.floor(Math.random() * 1000000);
   let currentValue = 0;
   const result = document.getElementById("result");
   const xhttp = new XMLHttpRequest();
