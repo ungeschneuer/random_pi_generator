@@ -1,5 +1,5 @@
 .rainbowText {
-    background-image: linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet);
+    background-image: linear-gradient(to right,red,orange,yellow,green,rgb(122, 122, 237),violet);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: move 90s linear infinite
@@ -11,8 +11,8 @@
     }
 }
 
-#position, #prompt {
-    opacity: 0
+#position, #prompt, #download-btn {
+    opacity: 0;
 }
 
 .fade-in {
@@ -30,5 +30,9 @@
     }
 }
 
-.text-decoration-none
-{text-decoration: none;}
+
+
+canvas {
+    max-width: 100%;
+    max-height: 100%;
+  }

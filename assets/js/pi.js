@@ -1,7 +1,8 @@
-const [resultEl, positionEl, promptEl] = [
+const [resultEl, positionEl, promptEl, downloadEL] = [
   document.getElementById("result"),
   document.getElementById("position"),
-  document.getElementById('prompt')
+  document.getElementById('prompt'),
+  document.getElementById('download-btn')
 ];
 const interval = 100; // Increase this value to slow down the animation
 let pi = '';
@@ -48,6 +49,7 @@ async function getRandomPiDigit() {
       positionEl.innerHTML = `Position ${position+1}`;
       positionEl?.classList?.add("fade-in");
       promptEl.classList.add('fade-in');
+      downloadEL.classList.add('fade-in');
     }
   }
 
