@@ -97,7 +97,9 @@ function openCanvasModal() {
 
   // Set the download link href to the data URL
   var downloadLink = document.getElementById("downloadLink");
+  var imagepres = document.getElementById("story-img");
   downloadLink.href = dataURL;
+  imagepres.src = dataURL;
 }
 
 // Get the canvas modal element
