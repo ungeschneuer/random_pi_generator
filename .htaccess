@@ -1,0 +1,10 @@
+RewriteEngine On
+
+RewriteRule ^(prompts) - [L]
+
+# language starts with DE
+RewriteCond %{HTTP:Accept-Language} ^de [NC]
+RewriteRule ^$ /de/ [L,R=302]
+
+# else redirect to the English version
+RewriteRule ^$ /en/ [L,R=302]
