@@ -21,7 +21,7 @@ function openCanvasModal() {
     fillColor: 'transparent',
     link: "pi.schneuer.online"
   };
-  const headlineStyle = "bold 110px Arial";
+  const headlineStyle = "bold 100px Arial";
   const numberStyle = "bold 120px Arial";
   const positionStyle = "normal 40px Arial";
   const promptStyle = "normal 60px Arial";

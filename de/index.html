@@ -52,7 +52,7 @@
                     <div class="col">
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" id="intro-row">
                     <div class="col"> </div>
                     <div class="col-12 col-md-9">
                         <p class="fs-3" id="intro">π mag eine Zahl sein, aber sie birgt in ihren Ziffern unendlich viele
@@ -61,46 +61,53 @@
                     </div>
                     <div class="col"></div>
                 </div>
-                <div class="row">
+                <div class="row" id="start-button">
+                    <div class="col"></div>
+                    <div class="col-12">
+                        <button type="button" class="btn btn-outline-light btn-lg px-3 gap-3"
+                            onclick="getRandomPiDigit()">Start</button>
+                    </div>
+                    <div class="col"></div>
+                </div>
+                <div class="row fade-in">
                     <div class="col"></div>
                     <div class="col-12">
                         <h2 class="display-2 py-3" id="result"></h2>
                     </div>
                     <div class="col"></div>
                 </div>
-                <div class="row">
+                <div class="row fade-in">
                     <div class="col"></div>
                     <div class="col-12">
                         <figcaption class="blockquote-footer" id="position"> </figcaption>
                     </div>
                     <div class="col"></div>
                 </div>
-                <div class="row">
+                <div class="row fade-in">
                     <div class="col"></div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-7">
                         <p id="prompt" class="fs-3 pb-2"></p>
                     </div>
                     <div class="col"></div>
                 </div>
-                <div class="row">
+                <div class="row fade-in">
                     <div class="col"></div>
                     <div class="col-12">
-                        <button type="button" class="btn btn-outline-light btn-lg px-3 gap-3"
-                            onclick="getRandomPiDigit()">Feel the π</button>
-                    </div>
-                    <div class="col pt-3">
-                        <button id="download-btn" type="button" class="btn btn-outline-light btn-lg px-3 gap-3"
-                            data-bs-toggle="modal" data-bs-target="#canvasModal">
-                            Download
-                        </button>
+                        <button id="download-btn" type="button" class="btn btn-outline-light btn-lg px-3 gap-5"
+                            data-bs-toggle="modal" data-bs-target="#canvasModal"> Download </button>
+                        <button type="button" class="btn btn-outline-light btn-lg px-3 gap-5"
+                            onclick="getRandomPiDigit()">Nochmal</button>
+                        <button id="buy-btn" type="button" class="btn btn-outline-light btn-lg px-3 gap-5"
+                            data-bs-toggle="modal" data-bs-target="#buyModal"> Kaufen </button>
+                        <div class="col pt-3"> </div>
                     </div>
                 </div>
             </div>
         </main>
 
-        <!-- Bootstrap modal -->
+        <!-- Bootstrap modal Download -->
         <div class="modal fade" id="canvasModal" tabindex="-1" aria-labelledby="canvasModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="canvasModalLabel">Bild zum herunterladen</h5>
@@ -108,17 +115,107 @@
                     </div>
                     <div class="modal-body">
                         <canvas id="myCanvas" style="display:none" width="1080" height="1920"></canvas>
-                        <img id="story-img" src="" class="img-fluid">                    </div>
+                        <img id="story-img" src="" class="img-fluid">
+                    </div>
                     <div class="modal-footer">
                         <a id="downloadLink" class="btn btn-primary" download="canvas.png">Download</a>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Kaufen -->
+        <div class="modal fade" id="buyModal" tabindex="-1" aria-labelledby="buyModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 text-black" id="buyModalLabel">Piece of the π</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-black">Es gibt seit Jahren schon die Möglichkeit, Galaxien, Sterne, Quadratmeter
+                            auf dem Mond und andere Besitztümer zu kaufen, die nach geltendem Recht nicht besessen
+                            werden
+                            können. Da es aber die diversen "Institute" nicht abhält, möchte ich auch ein Stück vom
+                            Kuchen, weshalb ihr jetzt Eure persönliche π-Zahl kaufen könnt.</p>
+                        <p class="text-black">Das wäre bei Dir die Zahl <b id="modalResult"></b> an der Stelle <b
+                                id="modalPosition"></b>.</p>
+                        <p class="text-black">Also hier der Deal, du paypalst mir 5 Euro und ich nehme deine Zahl aus
+                            dem System. Nie wieder wird jemand diese Zahl (über diese Webseite) bekommen. Für 5 Euro
+                            mehr designe ich auch noch eine Urkunde und schicke sie dir per E-Mail. Für noch mal 5
+                            darfst du dir aussuchen, welche Position und Zahl du haben möchtest. Perfekt für
+                            Geburtstage, Namenstage und Pi-Tag (der nächste 14. März kommt bestimmt). </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                        <button type="button" class="btn btn-primary" data-bs-target="#formModal"
+                            data-bs-toggle="modal">Kaufen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="formModal" aria-hidden="true" aria-labelledby="buyFormModalLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 text-black" id="buyFormModalLabel">π Zahl kaufen</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group row pb-3">
+                                <label for="inputName" class="col-sm-2 col-form-label text-black">Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputName">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail" class="col-sm-2 col-form-label text-black">E-Mail</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                        <button type="button" class="btn btn-primary" data-bs-target="#really"
+                            data-bs-toggle="modal">Bestellen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="really" aria-hidden="true" aria-labelledby="reallyModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 text-black" id="reallyModal">Wirklich?!</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-black"><b>Okay!</b> Ich dachte, das war wirklich sehr offensichtlich als Scherz
+                            gekennzeichnet. Aber anscheinend nicht offensichtlich genug. Mein ganzer Punkt ist, dass
+                            diese Industrie komplett bescheuert ist. Was ist das denn bitte für eine Satire, wenn sie
+                            sich dann genau der gleichen kapitalistischen Logik unterwirft, die sie kritisiert?</p>
+                        <p class="text-black">Aber na gut, hier ist der Deal: Du schickst mir einen Beweis an
+                            <SCRIPT
+                                LANGUAGE="JavaScript"> user = 'marcel'; site = 'schneuer.online'; document.write('<a href=\"mailto:' + user + '@' + site + '\">'); document.write(user + '@' + site + '</a>');</SCRIPT>
+                            , dass du in den letzten zwei Tagen an
+                            eine gute Sache gespendet hast und ich schicke dir die Urkunde. Danach reden wir beide nie
+                            wieder darüber und du erzählst jeder Person, wie toll und lustig diese Aktion ist.
+                        </p>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <footer class="mt-auto text-white-50">
-            <p>Code auf <a href="https://github.com/ungeschneuer/random_pi_generator" class="text-white">Github</a>, von
+            <p>Code auf <a href="https://github.com/ungeschneuer/random_pi_generator" class="text-white">Github</a>,
+                von
                 <a href="https://social.tchncs.de/@schneuerwerk" class="text-white">@schneuerwerk</a>.
             </p>
         </footer>
@@ -130,10 +227,6 @@
     <script asnyc src="../assets/js/bootstrap.bundle.min.js"></script>
     <script async src="../assets/js/pi.js"></script>
     <script async src="../assets/js/image_generator.js"></script>
-
-
-
-
 
 </body>
 

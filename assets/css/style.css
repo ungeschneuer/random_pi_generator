@@ -11,11 +11,11 @@
     }
 }
 
-#position, #prompt, #download-btn {
+.fade-in {
     opacity: 0;
 }
 
-.fade-in {
+.fade-in.visible {
     opacity: 1;
     animation: fadeIn 2s forwards
 }
